@@ -117,7 +117,7 @@ const Login: React.FC = () => {
       setCurrentUser(user);
 
       // Connect to socket server after setting user
-      const serverUrl = 'http://localhost:3001';
+      const serverUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3001';
       console.log('Connecting to socket server:', serverUrl);
       connectSocket(serverUrl);
 

@@ -78,7 +78,7 @@ const WORLD_CONFIG = {
   },
   CONNECTION: {
     TIMEOUT: 2000,
-    SERVER_URL: 'http://localhost:3001',
+    SERVER_URL: import.meta.env.VITE_BACKEND_URL || 'http://localhost:3001',
   },
 } as const;
 
