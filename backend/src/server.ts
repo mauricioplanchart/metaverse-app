@@ -40,7 +40,7 @@ const httpServer = createServer(app);
 // Enhanced Socket.IO configuration with security
 const io = new Server(httpServer, {
   cors: {
-    origin: CONFIG.FRONTEND_URL,
+    origin: ["http://localhost:5173", "https://metaverse-app-sage.vercel.app", "https://metaverse-app.vercel.app"],
     methods: ["GET", "POST"],
     credentials: true
   },
@@ -59,7 +59,7 @@ app.use(helmet({
       styleSrc: ["'self'", "'unsafe-inline'"],
       scriptSrc: ["'self'"],
       imgSrc: ["'self'", "data:", "https:"],
-      connectSrc: ["'self'", CONFIG.FRONTEND_URL],
+      connectSrc: ["'self'", "http://localhost:5173", "https://metaverse-app-sage.vercel.app", "https://metaverse-app.vercel.app"],
     },
   },
   crossOriginEmbedderPolicy: false,
@@ -78,7 +78,7 @@ app.use(limiter);
 
 // CORS with enhanced security
 app.use(cors({
-  origin: CONFIG.FRONTEND_URL,
+  origin: ["http://localhost:5173", "https://metaverse-app-sage.vercel.app", "https://metaverse-app.vercel.app"],
   credentials: true,
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization'],
