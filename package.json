@@ -1,0 +1,15 @@
+{
+  "name": "metaverse-app",
+  "version": "1.0.0",
+  "description": "Modern 3D Metaverse Application",
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build",
+    "dev": "cd frontend && npm run dev",
+    "start": "cd frontend && npm run preview"
+  },
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "private": true
+} 
