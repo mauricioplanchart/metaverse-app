@@ -462,7 +462,7 @@ io.on('connection', (socket) => {
 });
 
 // Enhanced health check endpoint
-app.get('/health', (req, res) => {
+app.get('/health', (req: express.Request, res: express.Response) => {
   try {
     const healthData = {
       status: 'ok',
@@ -482,7 +482,7 @@ app.get('/health', (req, res) => {
 });
 
 // Enhanced stats endpoint
-app.get('/stats', (req, res) => {
+app.get('/stats', (req: express.Request, res: express.Response) => {
   try {
     const stats = {
       connectedUsers: connectedUsers.size,
@@ -515,7 +515,7 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
 });
 
 // 404 handler
-app.use('*', (req, res) => {
+app.use('*', (req: express.Request, res: express.Response) => {
   res.status(404).json({ error: 'Endpoint not found' });
 });
 
